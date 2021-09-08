@@ -1,0 +1,157 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html{
+  --white: #FFFFFF;
+  --grey: #F6F6F6;
+  --brown: #6C4C40;
+  --blue: #19B6FE;
+  --light-blue: #9AF1FF;
+  --black: #373434;
+
+  /* Polaroid colors */
+  --pink: #E272A1;
+  --orange: #FF7143;
+  --mustard: #FDCA28;
+  --yellow: #FFEC3C;
+  --green: #89C447;
+
+/* 1rem = 16px (User Agent) = 100% (User Agent) */
+  font-size: 62.5% /* 10px */;
+  font-family: 'Inconsolata', monospace;
+  color: var(--brown);
+}
+
+body{
+  background-color: var(--grey);
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 34.6rem;
+  font-size: 1.8rem;
+  font-weight:500;
+}
+
+nav a:hover{
+  color: var(--blue);
+}
+
+.content{
+  margin-top: 4.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.boxWhite{
+  display: flex;
+  flex-direction: column;
+  
+
+  max-width: 56.8rem;
+  height: 56.8rem;
+  background-color: var(--white);
+  border-radius: 4.0rem;
+  box-shadow: -3px 3px 0px #E272A1, -6px 6px 0px #FF7143, -9px 9px 0px #FDCA28, -12px 12px 0px #FFEC3C, -15px 15px 0px #89C447, -18px 18px 0px #19B6FE;
+}
+
+.benefits{
+  display: flex;
+  flex-direction: row;
+  margin: 3.2rem 3.1rem 0rem 3.1rem;
+  justify-content: space-between;
+  align-items:flex-end;
+  width: 50.6rem;
+}
+
+.benefits h1{
+  font-size: 4.8rem;
+  font-family: 'Source Serif Pro', serif;
+  line-height: 4.2rem;
+  font-weight: 600;
+  width: 23.6rem;
+}
+
+.benefits ul li{
+  font-size: 1.8rem;
+  list-style-type: none;
+  font-weight: 500;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form p{
+  margin-top: 6.4rem;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+form input{
+  width: 49.6rem;
+  height: 5.0rem;
+  margin-top: 2.4rem;
+  border-radius: 1.0rem;
+  border: #19B6FE solid 0.1rem;
+}
+
+form input::placeholder{
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.8rem;
+  color: var(--brown);
+}
+
+form button{
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.8rem;
+  width: 22.7rem;
+  height: 6.0rem;
+  border-radius: 1.0rem;
+  background-color: var(--blue);
+  margin: 3.0rem auto;
+}
+
+.polaroidCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 46.2rem;
+  height: 46.2rem;
+  background-color: var(--white);
+  box-shadow: 24px 12px 50px rgba(0, 0, 0, 0.25);
+}
+.backgroudCard{
+  background-color: var(--white);
+}
+
+.imgCard{
+  margin-top: 3.0rem;
+  background-color: var(--black);
+  width: 40.2rem;
+  height: 32.3rem;
+}
+
+.polaroidImage{
+  width: 40.2rem;
+  height: 32.3rem;
+  object-fit: cover;
+}
+
+.polaroidSubtitle{
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--black);
+}
