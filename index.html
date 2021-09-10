@@ -16,7 +16,7 @@
 </head>
 <body>
   <nav>
-    <img src="./assets/logo.svg" alt="Logo Polaroid Geneator">
+    <a href="#"><img src="./assets/logo.svg" alt="Logo Polaroid Geneator"></a>
     <a href="index.html">Gerador</a>
     <a href="">Meus álbuns</a>
   </nav>
@@ -32,8 +32,8 @@
     </div>
     <form action="#"">
       <p>Gere memórias, espalhe sentimentos!</p>
-      <input type="text" name="subtitle" id="subtitle" placeholder="Insira sua legenda aqui">
-      <input type="text" name="date" id="date" placeholder="Insira a data aqui">
+      <input type="text" name="subtitle" id="subtitle" placeholder="Insira sua legenda aqui" maxlenght="120">
+      <input type="date" name="date" id="date" placeholder="Insira a data aqui">
       <input type="text" name="urlImage" id="urlImage" placeholder="Insira a url da sua imagem aqui">
       <button id="create" type="submit">Gerar polaroid!</button> 
     </form>
@@ -43,8 +43,9 @@
         <div class="imgCard">
 
         </div>
-        <h1 id="polaroidTitle"></h1>
-        <p id="polaroidSubtitle"></p>
+        <div class="polaroidContent">
+
+        </div>
       </div>
     </div>
   </div>
