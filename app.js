@@ -34,7 +34,7 @@ function createCard(){
   image.appendChild(polaroidImage);
   polaroidContent.appendChild(subtitleCard);
   polaroidContent.appendChild(dateCard);
-  // let content = document.querySelector(".content")
-  // let divForm = document.querySelector(".boxWhite")
-  // content.removeChild(divForm);
+  let content = document.querySelector(".content")
+  let divForm = document.querySelector(".boxWhite")
+  content.removeChild(divForm);
 }
