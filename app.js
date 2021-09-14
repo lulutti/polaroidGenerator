@@ -65,9 +65,20 @@ form.addEventListener('submit', (event) => {
     formValues.date = date.value;
     formValues.urlImage = urlImage.value;
 
+    //Acrescetando o menu de interação com a polaroid
+    let menuPolaroid = document.querySelector('.menu')
+    menuPolaroid.style.visibility = "visible";
+
     // Reseta o form
     form.reset()
   }
+}
+
+// Função para mudar o botão
+function changeButtonAlbum(newImage,newText){
+  imageButtonAlbum.setAttribute('src',`./assets/${newImage}.svg`);
+  let textButtonAlbum = document.querySelector('.buttonAlbum p');
+  textButtonAlbum.innerHTML = `${newText}`;
 }
 
 // Animação botão álbum
@@ -76,32 +87,31 @@ let buttonAlbum = document.querySelector('.buttonAlbum');
 let imageButtonAlbum = document.querySelector('#buttonAlbumImage');
 
 buttonAlbum.addEventListener('mouseover', () => {
-  imageButtonAlbum.setAttribute('src','./assets/albumWhite.svg');
-  let textButtonAlbum = document.querySelector('.buttonAlbum p');
-  textButtonAlbum.innerHTML = "Adicionar ao álbum";
-} )
-
-buttonAlbum.addEventListener('mouseout', () => {
-  imageButtonAlbum.setAttribute('src','./assets/album.svg');
-  let textButtonAlbum = document.querySelector('.buttonAlbum p');
-  textButtonAlbum.innerHTML = "";
+  let change = setTimeout(changeButtonAlbum,200, 'albumWhite','Adicionar ao álbum')
+  buttonAlbum.addEventListener('mouseout', () => {
+    clearTimeout(change)
+    changeButtonAlbum('album','')
+  } )
 } )
 
 // Animação botão share
+
+// Função para mudar o botão
+function changeButtonShare(newImage,newText){
+  imageButtonShare.setAttribute('src',`./assets/${newImage}.svg`);
+  let textButtonShare = document.querySelector('.buttonShare p');
+  textButtonShare.innerHTML = `${newText}`;
+}
 
 let buttonShare = document.querySelector('.buttonShare');
 let imageButtonShare = document.querySelector('#buttonShareImage');
 
 buttonShare.addEventListener('mouseover', () => {
-  imageButtonShare.setAttribute('src','./assets/shareWhite.svg');
-  let textButtonShare = document.querySelector('.buttonShare p');
-  textButtonShare.innerHTML = "Compartilhar";
-} )
-
-buttonShare.addEventListener('mouseout', () => {
-  imageButtonShare.setAttribute('src','./assets/share.svg');
-  let textButtonShare = document.querySelector('.buttonShare p');
-  textButtonShare.innerHTML = "";
+  let change = setTimeout(changeButtonShare,200,'shareWhite','Compartilhar');
+  buttonShare.addEventListener('mouseout', () => {
+    clearTimeout(change)
+    changeButtonShare('share','')
+  } )
 } )
 
 buttonAlbum.addEventListener('click', () => {
@@ -118,13 +128,13 @@ buttonAlbum.addEventListener('click', () => {
     div.classList.add('col');
     //Adicionando o card no album
     album.appendChild(div);
-    div.innerHTML += `<div class="polaroidCard">
+    div.innerHTML += `<div class="polaroidCard" style="margin: 10px">
         <div class="backgroundCard">
           <div class="imgCard"><img class="polaroidImage" src="${formValues.urlImage}"></div>
           <div class="polaroidContent"><span class="polaroidSubtitle">${formValues.subtitle}</span><span class="polaroidDate">${formValues.date}</span></div>
         </div>
       </div>`;
-  document.querySelector('#meusAlbuns').click();
+    // window.scroll(0,500)
   }
 });
 

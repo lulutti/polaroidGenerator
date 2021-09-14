@@ -37,7 +37,7 @@ nav{
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  max-width: 34.6rem;
+  max-width: 20rem;
   margin-left: 15rem;
   margin-top: 3.1rem;
   font-size: 1.8rem;
@@ -129,13 +129,13 @@ form input{
   height: 3.8rem;
   margin-top: 2.4rem;
   padding: 1rem;
+  font-family: 'Inconsolata', monospace;
   border-radius: 1.0rem;
   border: #19B6FE solid 0.1rem;
 }
 
 form input::placeholder{
   font-family: 'Inconsolata', monospace;
-  padding-left: 1.0rem;
   font-size: 1.4rem;
   color: var(--brown);
 }
@@ -183,6 +183,8 @@ form button:hover {
   height: 15rem;
   background-color: var(--white);
   border-radius: 10rem;
+  visibility:hidden;
+
 }
 
 .menu button {
@@ -292,8 +294,8 @@ form button:hover {
 .album{
   display: inline-flex;
   flex-direction: row;
+  justify-content: space-between;
   flex-wrap: wrap;
-  /* gap: 4rem;  esta dando erro na impressão*/ 
   justify-content: center; 
 }
 
