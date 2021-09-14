@@ -131,17 +131,17 @@ buttonAlbum.addEventListener('click', () => {
 
 buttonShare.addEventListener('click', function () {
   const url = encodeFormStateURL(formValues);
-  function copy(){
-    let textArea = document.createElement('textarea');
-    textArea.value = url;
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    document.execCommand('copy');
-    textArea.remove();
-  }
-  copy()
-  
+  window.open(url);
+  // function copy(){
+  //   let textArea = document.createElement('textarea');
+  //   textArea.value = url;
+  //   document.body.appendChild(textArea);
+  //   textArea.focus();
+  //   textArea.select();
+  //   document.execCommand('copy');
+  //   textArea.remove();
+  // }
+  // copy()
 });
 
 //função para pegar o estado do form e retornar o link
