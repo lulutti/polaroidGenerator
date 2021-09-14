@@ -38,7 +38,7 @@ nav{
   justify-content: space-between;
   align-items: center;
   max-width: 34.6rem;
-  margin-left: 12.4rem;
+  margin-left: 15rem;
   margin-top: 3.1rem;
   font-size: 1.8rem;
   font-weight:500;
@@ -52,12 +52,28 @@ nav a:hover{
   color: var(--blue);
 }
 
-.content{
-  margin-top: 2.8rem;
+main {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.content{
+  margin-top: 2.8rem;
+  display: inline-flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 15rem;
+}
+
+.contentUser{
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+  
 }
 
 .boxWhite{
@@ -129,24 +145,81 @@ form input:hover, form input:focus{
   outline: none;
 }
 
-form button{
-  font-family: 'Inconsolata', monospace;
-  font-size: 1.8rem;
-  width: 17rem;
-  height: 4.4rem;
-  border-radius: 1.0rem;
+form button {
   background-color: var(--blue);
   margin: 3.0rem auto;
+}
+
+form button {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.8rem;
+  width: 20rem;
+  height: 4.4rem;
+  border-radius: 1.0rem;
+  padding: 1rem;
+  cursor: pointer;
 }
 
 .polaroidCard{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 38rem;
-  height: 46.2rem;
+  width: 35.5rem;
+  height: 43.3rem;
   background-color: var(--white);
   box-shadow: 24px 12px 50px rgba(0, 0, 0, 0.25);
+
+}
+
+
+form button:hover {
+  opacity: 70%;
+} 
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 5.5rem;
+  height: 15rem;
+  background-color: var(--white);
+  border-radius: 10rem;
+}
+
+.menu button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 15.8rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  transition: ease-in-out .5s;
+}
+
+.menu button:hover {
+  padding: 1rem;
+  justify-content: space-around;
+  width: 19rem;
+  transition: ease-in .5s;
+  cursor: pointer;
+}
+
+.menu .buttonAlbum:hover{
+  background-color: var(--blue);
+}
+
+.menu .buttonShare:hover{
+  background-color: var(--green);
+}
+
+.menu .buttonAlbum p, .menu .buttonShare p{
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.4rem;
+  
+}
+
+.polaroidAnimation{
   animation: .5s 1s alternate polaroidAnimation;
 }
 
@@ -155,11 +228,11 @@ form button{
 		transform: translateY(-100%);
 	}
 	50%{
-		transform: translateY(8%);
+		transform: translateY(20%);
 	}
 
 	80%{
-		transform: translateY(4%);
+		transform: translateY(10%);
 	}
 		
 	100% {
@@ -172,15 +245,15 @@ form button{
 }
 
 .imgCard{
-  margin-top: 1.85rem;
+  margin-top: 2.7rem;
   background-color: var(--black);
-  width: 34rem;
-  height: 34rem;
+  width: 30.6rem;
+  height: 30.6rem;
 }
 
 .polaroidImage{
-  width: 34rem;
-  height: 34rem;
+  width: 30.6rem;
+  height: 30.6rem;
   object-fit: cover;
 }
 
@@ -206,4 +279,20 @@ form button{
   font-weight: 600;
   text-align: right;
   color: var(--black);
+}
+
+.albumBox {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.album{
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
 }
