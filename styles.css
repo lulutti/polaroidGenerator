@@ -73,7 +73,6 @@ main {
   flex-direction: row;
   align-items: center;
   gap: 3rem;
-  
 }
 
 .boxWhite{
@@ -175,6 +174,7 @@ form button {
 form button:hover {
   opacity: 70%;
 } 
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -201,7 +201,7 @@ form button:hover {
   padding: 1rem;
   justify-content: space-around;
   width: 19rem;
-  transition: ease-in .5s;
+  /* transition:  .5s; */
   cursor: pointer;
 }
 
@@ -293,6 +293,7 @@ form button:hover {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: center;
+  /* gap: 4rem;  esta dando erro na impressão*/ 
+  justify-content: center; 
 }
+

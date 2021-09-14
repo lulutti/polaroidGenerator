@@ -6,6 +6,7 @@ let date = document.querySelector("#date");
     // Capturando o valor inserido na url
 let urlImage = document.querySelector("#urlImage");
 let formValues = {};
+let buttonCreate = document.querySelector('form button')
 
 
 form.addEventListener('submit', (event) => {
@@ -123,5 +124,53 @@ buttonAlbum.addEventListener('click', () => {
           <div class="polaroidContent"><span class="polaroidSubtitle">${formValues.subtitle}</span><span class="polaroidDate">${formValues.date}</span></div>
         </div>
       </div>`;
+  document.querySelector('#meusAlbuns').click();
   }
 });
+
+
+buttonShare.addEventListener('click', function () {
+  const url = encodeFormStateURL(formValues);
+  function copy(){
+    let textArea = document.createElement('textarea');
+    textArea.value = url;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    document.execCommand('copy');
+    textArea.remove();
+  }
+  copy()
+  
+});
+
+//função para pegar o estado do form e retornar o link
+function encodeFormStateURL(formState) {
+  const json = JSON.stringify(formState);
+
+  const encoded = encodeURIComponent(json);
+
+  return window.location.href.split('?')[0] + `?c=${encoded}`
+}
+
+//função para pegar o valor da url
+function decodeFormStateURL() {
+  const searchParam = window.location.search && window.location.search.startsWith('?c=') && window.location.search.replace('?c=', '');
+
+  if (!searchParam) return '';//condição de url vazia
+
+  const decoded = decodeURIComponent(searchParam);
+  const json = JSON.parse(decoded);
+
+  return json;
+}
+
+//constante com o estado inicial que chama a função do valor da url
+const inicialState = decodeFormStateURL()
+//condição para preencher o polaroid
+if (inicialState){
+  subtitle.value = inicialState.subtitle;
+  date.value = inicialState.date;
+  urlImage.value = inicialState.urlImage;
+  buttonCreate.click();
+}

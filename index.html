@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel=”stylesheet” type=”text/css” href=”/print.css” media=”print” />
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +19,7 @@
   <nav>
     <a href="#"><img src="./assets/logo.svg" alt="Logo Polaroid Geneator"></a>
     <a href="index.html">Gerador</a>
-    <a href="">Meus álbuns</a>
+    <a href="#albumBox" id="meusAlbuns">Meus álbuns</a>
   </nav>
   <main>
     <div class="content">
@@ -31,7 +32,7 @@
             <li><img src=".//assets/check.svg"> Pronto para imprimir</li>
           </ul>
         </div>
-        <form action="#"">
+        <form action="#"" method="get">
           <p>Gere memórias, espalhe sentimentos!</p>
           <input type="text" name="subtitle" id="subtitle" placeholder="Insira sua legenda aqui" maxlenght="120">
           <input type="date" name="date" id="date" placeholder="Insira a data aqui">
@@ -39,12 +40,12 @@
           <button id="create" type="submit">Gerar polaroid!</button> 
         </form>
         </div>
-        <div class="contentUser">
-          <div class="polaroidCard polaroidAnimation">
-            <div class="backgroundCard">
-              <div class="imgCard">
+        <div class="contentUser print">
+          <div class="polaroidCard polaroidAnimation print" id="printable">
+            <div class="backgroundCard print">
+              <div class="imgCard print">
               </div>
-              <div class="polaroidContent">
+              <div class="polaroidContent print">
               </div>
             </div>
           </div>
@@ -67,7 +68,7 @@
     
   </main>
      
-  <div class="albumBox">
+  <div class="albumBox" id="albumBox">
     <div class="album">
         
     </div>
